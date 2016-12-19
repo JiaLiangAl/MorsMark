@@ -1,0 +1,52 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>rc/LOGO.ico</file>
+        <file>rc/LOGO.png</file>
+        <file>rc/LOGO.rc</file>
+        <file>rc/MD.ico</file>
+        <file>rc/MD.png</file>
+    </qresource>
+    <qresource prefix="/res/icon">
+        <file>rc/icon/align-center.png</file>
+        <file>rc/icon/align-left.png</file>
+        <file>rc/icon/align-right.png</file>
+        <file>rc/icon/edit-copy.png</file>
+        <file>rc/icon/edit-copy-html.png</file>
+        <file>rc/icon/edit-cut.png</file>
+        <file>rc/icon/edit-edit-css.png</file>
+        <file>rc/icon/edit-find.png</file>
+        <file>rc/icon/edit-flush.png</file>
+        <file>rc/icon/edit-paste.png</file>
+        <file>rc/icon/edit-redo.png</file>
+        <file>rc/icon/edit-undo.png</file>
+        <file>rc/icon/edit-view-html.png</file>
+        <file>rc/icon/file-close.png</file>
+        <file>rc/icon/file-export.png</file>
+        <file>rc/icon/file-import.png</file>
+        <file>rc/icon/file-new.png</file>
+        <file>rc/icon/file-open.png</file>
+        <file>rc/icon/file-option.png</file>
+        <file>rc/icon/file-quite.png</file>
+        <file>rc/icon/file-save.png</file>
+        <file>rc/icon/file-saveas.png</file>
+        <file>rc/icon/format-bigger.png</file>
+        <file>rc/icon/format-blod.png</file>
+        <file>rc/icon/format-code.png</file>
+        <file>rc/icon/format-italic.png</file>
+        <file>rc/icon/format-quote.png</file>
+        <file>rc/icon/format-smaller.png</file>
+        <file>rc/icon/format-sub.png</file>
+        <file>rc/icon/format-sup.png</file>
+        <file>rc/icon/format-underline.png</file>
+        <file>rc/icon/insert-formation.png</file>
+        <file>rc/icon/insert-image.png</file>
+        <file>rc/icon/insert-link.png</file>
+        <file>rc/icon/left.png</file>
+        <file>rc/icon/print.png</file>
+        <file>rc/icon/right.png</file>
+        <file>rc/icon/view-edit-only.png</file>
+        <file>rc/icon/view-fullscreen.png</file>
+        <file>rc/icon/view-preview.png</file>
+        <file>rc/icon/view-read-only.png</file>
+    </qresource>
+</RCC>

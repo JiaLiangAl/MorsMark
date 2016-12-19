@@ -8,6 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+QT      += webkitwidgets
+
 TARGET = MorsMark
 TEMPLATE = app
 
@@ -26,12 +28,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES +=\
         main.cpp\
         MorsApp.cpp \
-    MorsMainWindow.cpp
+    MorsOptionDialog.cpp \
+    MorsHtmlHighlighter.cpp \
+    MorsMainWindow.cpp \
+    MorsBasicMarkWidget.cpp \
+    MorsMarkWidget.cpp \
+    MorsMarkHighlighter.cpp \
+    MorsHtmlWidget.cpp \
+    MorsMarkParser.cpp
 
 HEADERS  += \
         MorsApp.h \
     MorsConfig.h \
-    MorsMainWindow.h
+    MorsIO.h \
+    MorsOptionDialog.h \
+    MorsHtmlHighlighter.h \
+    MorsMainWindow.h \
+    MorsBasicMarkWidget.h \
+    MorsHtmlWidget.h \
+    MorsMarkHighlighter.h \
+    MorsMarkParser.h \
+    MorsMarkWidget.h
 
 FORMS    += \
+    MorsOptionDialog.ui \
     MorsMainWindow.ui
+
+RESOURCES += \
+    rc.qrc
+

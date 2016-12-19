@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     if(argc > 1)
     {
-       // window.openMarkdownFile(QString::fromLocal8Bit(argv[1]));
+       //window.openMarkdownFile(QString::fromLocal8Bit(argv[1]));
     }
     window.show();
 
