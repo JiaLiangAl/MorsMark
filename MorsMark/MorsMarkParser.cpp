@@ -46,7 +46,7 @@ namespace MorsPrivate {
                 QProcess::execute(program, _args);
         }
     };
-}//namespace SmkPrivate
+}//namespace MorsPrivate
 
 MorsMarkParser::MorsMarkParser(QObject *parent)
     : QObject(parent), parserThread_(NULL) {
@@ -65,7 +65,7 @@ bool MorsMarkParser::parseMarkToHtml(const QString& markPath,
                                     const QString& htmlPath,
                                     const QString& cssPath ) {
     if(parserThread_ == NULL) {
-        parserThread_ = new SmkPrivate::PandocThread(markPath, htmlPath, cssPath);
+        parserThread_ = new MorsPrivate::PandocThread(markPath, htmlPath, cssPath);
         connect(parserThread_, SIGNAL(finished()),
                 this,          SLOT(when_mark_to_html_finished()) );
         parserThread_->start();
@@ -77,11 +77,11 @@ bool MorsMarkParser::parseMarkToHtml(const QString& markPath,
 //! 将路径为 markPath 的 inFormat 格式文件转换为
 //! 路径为 htmlPath 的 outFormat 格式文件
 //! 使用路径为 cssPath 的 stylesheet 文件
-bool SmkMarkParser::parse(const QString& inPath,  const QString& inFormat,
+bool MorsMarkParser::parse(const QString& inPath,  const QString& inFormat,
                           const QString& outPath, const QString& outFormat,
                           const QString& cssPath ) {
     if(parserThread_ == NULL) {
-        parserThread_ = new SmkPrivate::PandocThread(inPath,  inFormat,
+        parserThread_ = new MorsPrivate::PandocThread(inPath,  inFormat,
                                                      outPath, outFormat,
                                                      cssPath);
         connect(parserThread_, SIGNAL(finished()),

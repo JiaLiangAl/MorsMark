@@ -1,5 +1,5 @@
-﻿#ifndef SMARK_SMK_BASIC_MARK_WIDGET_H
-#define SMARK_SMK_BASIC_MARK_WIDGET_H
+﻿#ifndef MORS_BASIC_MARK_WIDGET_H
+#define MORS_BASIC_MARK_WIDGET_H
 
 #include <QPlainTextEdit>
 #include "MorsMarkHighlighter.h"

@@ -11,7 +11,7 @@ namespace MorsPrivate {
 
     public:
 
-        LineNumberArea(SmkBasicMarkWidget* parent)
+        LineNumberArea(MorsBasicMarkWidget* parent)
             : QWidget(parent), editor(parent) {
             /*nothing need to do*/
         }
@@ -26,13 +26,13 @@ namespace MorsPrivate {
             editor->lineNumberAreaPaintEvent(event);
         }
     };
-}//namespace SmkPrivate
+}//namespace MorsPrivate
 
-MorsBasicMarkWidget::SmkBasicMarkWidget(QWidget *parent)
+MorsBasicMarkWidget::MorsBasicMarkWidget(QWidget *parent)
     : QPlainTextEdit(parent)
 {
-    pLineNumberArea_ = new SmkPrivate::LineNumberArea(this);
-    pHighlighter_    = new SmkMarkHighlighter(this->document());
+    pLineNumberArea_ = new MorsPrivate::LineNumberArea(this);
+    pHighlighter_    = new MorsMarkHighlighter(this->document());
 
     connect(this, SIGNAL(blockCountChanged(int)),
             this, SLOT(updateLineNumberAreaWidth(int)));
@@ -51,15 +51,15 @@ void MorsBasicMarkWidget::updateOption(void)
 {
     // set editor font
     QFont font;
-    font.setFamily(qSmkApp()->option("font.family"));
-    font.setPointSize(qSmkApp()->option("font.size").toInt());
+    font.setFamily(qMorsApp()->option("font.family"));
+    font.setPointSize(qMorsApp()->option("font.size").toInt());
     font.setStyleHint(QFont::Monospace, QFont::PreferAntialias);
     setFont(font);
 
     // set edit color
     QPalette palette;
-    palette.setColor(QPalette::Base, QColor(qSmkApp()->option("color.background")));
-    palette.setColor(QPalette::Text, QColor(qSmkApp()->option("color.foreground")));
+    palette.setColor(QPalette::Base, QColor(qMorsApp()->option("color.background")));
+    palette.setColor(QPalette::Text, QColor(qMorsApp()->option("color.foreground")));
     setPalette(palette);
 
     // set highter option
@@ -104,13 +104,13 @@ void MorsBasicMarkWidget::highlightCurrentLine()
     QTextCursor currentCursor = textCursor();
 
     QTextEdit::ExtraSelection lineSelection;
-    lineSelection.format.setBackground( QColor(qSmkApp()->option("color.focusline")) );
+    lineSelection.format.setBackground( QColor(qMorsApp()->option("color.focusline")) );
     lineSelection.format.setProperty(QTextFormat::FullWidthSelection, true);
     lineSelection.cursor = currentCursor;
     lineSelection.cursor.clearSelection();
 
     QTextEdit::ExtraSelection wordSelection;
-    wordSelection.format.setBackground( QColor(qSmkApp()->option("color.focusword")) );
+    wordSelection.format.setBackground( QColor(qMorsApp()->option("color.focusword")) );
     wordSelection.cursor = currentCursor;
     wordSelection.cursor.select(QTextCursor::WordUnderCursor);
 

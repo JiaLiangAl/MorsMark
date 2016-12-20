@@ -5,6 +5,9 @@
 #include "MorsOptionDialog.h"
 #include "ui_MorsMainWindow.h"
 
+
+
+
 MorsMainWindow::MorsMainWindow(QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::MorsMainWindow)
@@ -46,7 +49,7 @@ MorsMainWindow::~MorsMainWindow() {
 void MorsMainWindow::openMarkdownFile(const QString& path) {
     QString context;
     QString errorInfo = qMorsLoadText(path, &context);
-    if(errorInfo != Mors_EMPTY_STR) {
+    if(errorInfo != MORS_EMPTY_STR) {
         QMessageBox::warning(this, tr("Error"), errorInfo);
         _aux_disableGUI();
     } else {
@@ -225,9 +228,9 @@ void MorsMainWindow::_aux_setCurrentPath(const QString& path) {
     markCachePath_   = qMarkCachePath(path);
     htmlCachePath_   = qHtmlCachePath(path);
     if(path.isEmpty()) {
-        setWindowTitle("Smark");
+        setWindowTitle("MrosMark");
     } else {
-        QString title = "Smark - " + QFileInfo(path).fileName();
+        QString title = "MrosMark - " + QFileInfo(path).fileName();
         setWindowTitle(title);
     }
 }
@@ -262,7 +265,7 @@ bool MorsMainWindow::_aux_cancelCurrentOperation(void) {
         // save current markdown context
         QString   context = ui->markView->toPlainText();
         QString errorInfo = qMorsSaveText(currentPath_, context);
-        if(errorInfo != Mors_EMPTY_STR) {
+        if(errorInfo != MORS_EMPTY_STR) {
             QMessageBox::warning(this, tr("Error"), errorInfo);
             return Cancel;
         } else {
@@ -275,9 +278,9 @@ bool MorsMainWindow::_aux_cancelCurrentOperation(void) {
 
 void MorsMainWindow::_aux_parseMarkdownToHTML(void) {
     QString context = ui->markView->toPlainText();
-    context.append(QString(10, Mors_LINE_END)); // 尾部加上换行符
+    context.append(QString(10, MORS_LINE_END)); // 尾部加上换行符
     QString errorInfo = qMorsSaveText(markCachePath_, context);
-    if(errorInfo != Mors_EMPTY_STR) {
+    if(errorInfo != MORS_EMPTY_STR) {
         QMessageBox::warning(this, tr("Write Cache File Error"), errorInfo);
     } else {
         QString cssPath = qMorsApp()->option("url.css");
@@ -390,7 +393,7 @@ void MorsMainWindow::on_actionSave_triggered() {
     // save current markdown context
     QString   context = ui->markView->toPlainText();
     QString errorInfo = qMorsSaveText(currentPath_, context);
-    if(errorInfo != Mors_EMPTY_STR) {
+    if(errorInfo != MORS_EMPTY_STR) {
         QMessageBox::warning(this, tr("Error"), errorInfo);
     } else if(isModified_ == true) {
         isModified_ = false;
@@ -431,7 +434,7 @@ void MorsMainWindow::on_actionSaveAs_triggered()
         QPrinter printer;
         printer.setOutputFormat(QPrinter::PdfFormat);
         printer.setOutputFileName(path);
-        ui->htmlView->print(&printer);
+        //ui->htmlView->print(&printer);
         return;
     } else {
         QString format;
@@ -485,7 +488,8 @@ void MorsMainWindow::on_actionPrint_triggered() {
     QPrintDialog dialog(&printer, this);
     if(dialog.exec() == QDialog::Accepted) {
         printer.setOutputFormat(QPrinter::NativeFormat);
-        ui->htmlView->print(&printer);
+        //ui->htmlView->print(&printer);
+
     }
 }
 
@@ -532,7 +536,7 @@ void MorsMainWindow::on_actionFullScreen_triggered(bool checked) {
  * ****************************************************************************/
 
 void MorsMainWindow::on_actionFlush_triggered() {
-    ui->htmlView->settings()->clearMemoryCaches();
+    //ui->htmlView->settings()->clearMemoryCaches();
     _aux_parseMarkdownToHTML();
 }
 
@@ -688,8 +692,8 @@ void MorsMainWindow::on_actionAboutQt_triggered() {
     QMessageBox::aboutQt(this, tr("About Qt"));
 }
 
-void MorsMainWindow::on_actionAboutSmark_triggered() {
-    QString aboutSmark = tr("<h1>Smark Editor 2.0</h1>"
+void MorsMainWindow::on_actionAboutMrosMark_triggered() {
+    QString aboutMrosMark = tr("<h1>MrosMark Editor 2.0</h1>"
                             "A sample markdown editor under <b>GPL</b>(the GNU General Public License) "
                             "based on Qt 4.8, pandoc & MathJax"
                             "<p align=\"center\"><b>Copyright (C) 2013~2014 Elerao Ao</b></p>"
@@ -704,7 +708,7 @@ void MorsMainWindow::on_actionAboutSmark_triggered() {
                             "License along with this program. If not, see "
                             "<a href=\"http://www.gnu.org/licenses\">http://www.gnu.org/licenses/</a><br/>."
                             "<p align=\"right\">Contact : <a href=\"elerao.ao@gmail.com\">elerao.ao@gmail.com</a></p>" );
-    QMessageBox::about(this, tr("About Smark"), aboutSmark);
+    QMessageBox::about(this, tr("About MrosMark"), aboutMrosMark);
 }
 
 /* *****************************************************************************
@@ -755,7 +759,7 @@ void MorsMainWindow::on_markView_cursorPositionChanged() {
 void MorsMainWindow::when_parser_process_finish(void) {
     QString context;
     QString errorInfo = qMorsLoadText(htmlCachePath_, &context);
-    if(errorInfo != Mors_EMPTY_STR) {
+    if(errorInfo != MORS_EMPTY_STR) {
         QMessageBox::warning(this, tr("Error"), errorInfo);
         return;
     }

@@ -1,5 +1,5 @@
-﻿#ifndef SMARK_SMK_MARK_PARSER_H
-#define SMARK_SMK_MARK_PARSER_H
+﻿#ifndef MORS_MARK_PARSER_H
+#define MORS_MARK_PARSER_H
 
 #include <QObject>
 #include "MorsConfig.h"
@@ -11,7 +11,7 @@ QT_END_NAMESPACE
 
 /** ****************************************************************************
  * @brief The MorsMarkParser class
- * Smark 程序所使用的 Markdown 解析器类
+ * MrosMark 程序所使用的 Markdown 解析器类
  * 目前的实现是在另一线程中基于 QProcess 后台调用 Pandoc 命令来完成
  * ****************************************************************************/
 class MorsMarkParser : public QObject

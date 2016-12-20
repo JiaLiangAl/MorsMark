@@ -1,9 +1,9 @@
-﻿#ifndef SMARK_SMK_MAINWINDOW_H
-#define SMARK_SMK_MAINWINDOW_H
+﻿#ifndef MORS_MAINWINDOW_H
+#define MORS_MAINWINDOW_H
 
 #include <QMainWindow>
 #include "MorsConfig.h"
-//#include "MorsMarkParser.h"
+#include "MorsMarkParser.h"
 #include "MorsHtmlHighlighter.h"
 
 namespace Ui {
@@ -97,7 +97,7 @@ private slots:
 
     // 帮助菜单
     void on_actionAboutQt_triggered();
-    void on_actionAboutSmark_triggered();
+    void on_actionAboutMrosMark_triggered();
 
     // 查找部件
     void on_buttonFindPrev_clicked();
@@ -119,7 +119,7 @@ private:
     MorsHtmlHighlighter* pHtmlHighlighter_;
 
     bool          isModified_;
-    //MorsMarkParser parser_;
+    MorsMarkParser parser_;
     MorsGuiMode    currentGuiMode_;
     QString       currentPath_;
     QString       markCachePath_;

@@ -8,7 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-QT      += webkitwidgets
+QT      += webenginewidgets
+QT += printsupport
 
 TARGET = MorsMark
 TEMPLATE = app
@@ -55,5 +56,5 @@ FORMS    += \
     MorsMainWindow.ui
 
 RESOURCES += \
-    rc.qrc
+    rc/icon.qrc
 

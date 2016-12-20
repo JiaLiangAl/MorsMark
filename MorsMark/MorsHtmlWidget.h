@@ -1,10 +1,11 @@
-﻿#ifndef SMARK_SMK_HTML_WIDGET_H
-#define SMARK_SMK_HTML_WIDGET_H
+﻿#ifndef MORS_HTML_WIDGET_H
+#define MORS_HTML_WIDGET_H
 
-#include <QWebView>
-
-class MorsHtmlWidget
-        : public QWebView
+#include <QtWebEngineWidgets/QWebEngineView>
+#include "MorsConfig.h"
+#pragma comment(lib,"Qt5Widgets.lib")
+#pragma comment(lib,"Qt5WebEngineWidgets.lib")
+class MorsHtmlWidget: public QWebEngineView
 {
     Q_OBJECT
 

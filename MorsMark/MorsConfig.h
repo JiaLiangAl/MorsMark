@@ -7,9 +7,9 @@
 //#include <QDebug>
 
 #include <QtWidgets>
-//#include <QtWebEngineWidgets/QtWebEngineWidgets>
-//#include <QtPrintSupport/QPrinter>
-//#include <QtPrintSupport/QPrintDialog>
+#include <QtWebEngineWidgets/QtWebEngineWidgets>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
 
 #define MORS_VERSION "mors 1.0.0"
 

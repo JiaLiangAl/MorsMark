@@ -21,10 +21,10 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Smark</string>
+   <string>MorsMark</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="rc/icon.qrc">
     <normaloff>:/LOGO.png</normaloff>:/LOGO.png</iconset>
   </property>
   <widget class="QWidget" name="widget">
@@ -62,14 +62,14 @@
       <property name="childrenCollapsible">
        <bool>true</bool>
       </property>
-      <widget class="SmkHtmlWidget" name="htmlView" native="true"/>
+      <widget class="MorsHtmlWidget" name="htmlView" native="true"/>
       <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayout">
         <property name="spacing">
          <number>0</number>
         </property>
         <item>
-         <widget class="SmkMarkWidget" name="markView"/>
+         <widget class="MorsMarkWidget" name="markView"/>
         </item>
         <item>
          <widget class="QWidget" name="widgetFind" native="true">
@@ -284,7 +284,7 @@
      <string>Help (&amp;H)</string>
     </property>
     <addaction name="actionAboutQt"/>
-    <addaction name="actionAboutSmark"/>
+    <addaction name="actionAboutMrosMark"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -357,7 +357,7 @@
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-new.png</normaloff>:/icon/file-new.png</iconset>
    </property>
    <property name="text">
@@ -369,7 +369,7 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-open.png</normaloff>:/icon/file-open.png</iconset>
    </property>
    <property name="text">
@@ -381,7 +381,7 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-save.png</normaloff>:/icon/file-save.png</iconset>
    </property>
    <property name="text">
@@ -393,7 +393,7 @@
   </action>
   <action name="actionSaveAs">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-saveas.png</normaloff>:/icon/file-saveas.png</iconset>
    </property>
    <property name="text">
@@ -405,7 +405,7 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-close.png</normaloff>:/icon/file-close.png</iconset>
    </property>
    <property name="text">
@@ -417,7 +417,7 @@
   </action>
   <action name="actionPrint">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/print.png</normaloff>:/icon/print.png</iconset>
    </property>
    <property name="text">
@@ -429,7 +429,7 @@
   </action>
   <action name="actionQuite">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-quite.png</normaloff>:/icon/file-quite.png</iconset>
    </property>
    <property name="text">
@@ -441,7 +441,7 @@
   </action>
   <action name="actionPreview">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/view-preview.png</normaloff>:/icon/view-preview.png</iconset>
    </property>
    <property name="text">
@@ -453,7 +453,7 @@
   </action>
   <action name="actionReadOnly">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/view-read-only.png</normaloff>:/icon/view-read-only.png</iconset>
    </property>
    <property name="text">
@@ -465,7 +465,7 @@
   </action>
   <action name="actionEditOnly">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/view-edit-only.png</normaloff>:/icon/view-edit-only.png</iconset>
    </property>
    <property name="text">
@@ -480,7 +480,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/view-fullscreen.png</normaloff>:/icon/view-fullscreen.png</iconset>
    </property>
    <property name="text">
@@ -492,7 +492,7 @@
   </action>
   <action name="actionFlush">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-flush.png</normaloff>:/icon/edit-flush.png</iconset>
    </property>
    <property name="text">
@@ -504,7 +504,7 @@
   </action>
   <action name="actionCut">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-cut.png</normaloff>:/icon/edit-cut.png</iconset>
    </property>
    <property name="text">
@@ -516,7 +516,7 @@
   </action>
   <action name="actionCopy">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-copy.png</normaloff>:/icon/edit-copy.png</iconset>
    </property>
    <property name="text">
@@ -528,7 +528,7 @@
   </action>
   <action name="actionPaste">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-paste.png</normaloff>:/icon/edit-paste.png</iconset>
    </property>
    <property name="text">
@@ -540,7 +540,7 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-undo.png</normaloff>:/icon/edit-undo.png</iconset>
    </property>
    <property name="text">
@@ -552,7 +552,7 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-redo.png</normaloff>:/icon/edit-redo.png</iconset>
    </property>
    <property name="text">
@@ -564,7 +564,7 @@
   </action>
   <action name="actionFind">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-find.png</normaloff>:/icon/edit-find.png</iconset>
    </property>
    <property name="text">
@@ -576,7 +576,7 @@
   </action>
   <action name="actionViewHTML">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/edit-view-html.png</normaloff>:/icon/edit-view-html.png</iconset>
    </property>
    <property name="text">
@@ -588,7 +588,7 @@
   </action>
   <action name="actionFormatBlod">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-blod.png</normaloff>:/icon/format-blod.png</iconset>
    </property>
    <property name="text">
@@ -600,7 +600,7 @@
   </action>
   <action name="actionFormatItalic">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-italic.png</normaloff>:/icon/format-italic.png</iconset>
    </property>
    <property name="text">
@@ -612,7 +612,7 @@
   </action>
   <action name="actionFormatUnderline">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-underline.png</normaloff>:/icon/format-underline.png</iconset>
    </property>
    <property name="text">
@@ -624,7 +624,7 @@
   </action>
   <action name="actionFormatBigger">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-bigger.png</normaloff>:/icon/format-bigger.png</iconset>
    </property>
    <property name="text">
@@ -636,7 +636,7 @@
   </action>
   <action name="actionFormatSmaller">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-smaller.png</normaloff>:/icon/format-smaller.png</iconset>
    </property>
    <property name="text">
@@ -648,7 +648,7 @@
   </action>
   <action name="actionFormatSub">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-sub.png</normaloff>:/icon/format-sub.png</iconset>
    </property>
    <property name="text">
@@ -660,7 +660,7 @@
   </action>
   <action name="actionFormatSup">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-sup.png</normaloff>:/icon/format-sup.png</iconset>
    </property>
    <property name="text">
@@ -672,7 +672,7 @@
   </action>
   <action name="actionFormatCode">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-code.png</normaloff>:/icon/format-code.png</iconset>
    </property>
    <property name="text">
@@ -684,7 +684,7 @@
   </action>
   <action name="actionFormatQuote">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/format-quote.png</normaloff>:/icon/format-quote.png</iconset>
    </property>
    <property name="text">
@@ -696,7 +696,7 @@
   </action>
   <action name="actionAlignLeft">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/align-left.png</normaloff>:/icon/align-left.png</iconset>
    </property>
    <property name="text">
@@ -708,7 +708,7 @@
   </action>
   <action name="actionAlignRight">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/align-right.png</normaloff>:/icon/align-right.png</iconset>
    </property>
    <property name="text">
@@ -720,7 +720,7 @@
   </action>
   <action name="actionAlignCenter">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/align-center.png</normaloff>:/icon/align-center.png</iconset>
    </property>
    <property name="text">
@@ -732,7 +732,7 @@
   </action>
   <action name="actionInsertImage">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/insert-image.png</normaloff>:/icon/insert-image.png</iconset>
    </property>
    <property name="text">
@@ -744,7 +744,7 @@
   </action>
   <action name="actionInsertLink">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/insert-link.png</normaloff>:/icon/insert-link.png</iconset>
    </property>
    <property name="text">
@@ -756,7 +756,7 @@
   </action>
   <action name="actionInsertMathJax">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/insert-formation.png</normaloff>:/icon/insert-formation.png</iconset>
    </property>
    <property name="text">
@@ -774,14 +774,14 @@
     <string>About Qt</string>
    </property>
   </action>
-  <action name="actionAboutSmark">
+  <action name="actionAboutMrosMark">
    <property name="text">
-    <string>About Smark</string>
+    <string>About MrosMark</string>
    </property>
   </action>
   <action name="actionOption">
    <property name="icon">
-    <iconset>
+    <iconset resource="rc/icon.qrc">
      <normaloff>:/icon/file-option.png</normaloff>:/icon/file-option.png</iconset>
    </property>
    <property name="text">
@@ -791,17 +791,19 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SmkMarkWidget</class>
+   <class>MorsMarkWidget</class>
    <extends>QPlainTextEdit</extends>
-   <header location="global">Smark/SmkMarkWidget.h</header>
+   <header location="global">MorsMarkWidget.h</header>
   </customwidget>
   <customwidget>
-   <class>SmkHtmlWidget</class>
+   <class>MorsHtmlWidget</class>
    <extends>QWidget</extends>
-   <header>Smark/SmkHtmlWidget.h</header>
+   <header>MorsHtmlWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="rc/icon.qrc"/>
+ </resources>
  <connections/>
 </ui>

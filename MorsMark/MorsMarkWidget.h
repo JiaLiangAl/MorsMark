@@ -1,10 +1,9 @@
-﻿#ifndef SMARK_SMK_MARK_WIDGET_H
-#define SMARK_SMK_MARK_WIDGET_H
+﻿#ifndef MORS_MARK_WIDGET_H
+#define MORS_MARK_WIDGET_H
 
 #include "MorsBasicMarkWidget.h"
 
-class MorsMarkWidget
-        : public MorsBasicMarkWidget
+class MorsMarkWidget: public MorsBasicMarkWidget
 {
     Q_OBJECT
 

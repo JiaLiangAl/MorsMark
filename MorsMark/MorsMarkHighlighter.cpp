@@ -12,8 +12,8 @@ void MorsMarkHighlighter::updateOption(void)
     format_.clear();
     regexp_.clear();
 
-    QFont normalFont(qSmkApp()->option("font.family"),
-                     qSmkApp()->option("font.size").toInt());
+    QFont normalFont(qMorsApp()->option("font.family"),
+                     qMorsApp()->option("font.size").toInt());
     QFont boldFont   = normalFont; boldFont.setBold(true);
     QFont italicFont = normalFont; italicFont.setItalic(true);
 
@@ -32,22 +32,22 @@ void MorsMarkHighlighter::updateOption(void)
     regexp_.append(QRegExp("<italic>.*</italic>"));
 
     // QTextCharFormat codeFormat;
-    // codeFormat.setForeground(QColor(qSmkApp()->option("color.code")));
+    // codeFormat.setForeground(QColor(qMorsApp()->option("color.code")));
     // format_.append(codeFormat);
     // regexp_.append(QRegExp("^    .*"));
 
     QTextCharFormat linkFormat;
-    linkFormat.setForeground(QColor(qSmkApp()->option("color.link")));
+    linkFormat.setForeground(QColor(qMorsApp()->option("color.link")));
     format_.append(linkFormat);
     regexp_.append(QRegExp("!?\\[.*\\]\\(.*\\)"));
 
     QTextCharFormat htmlFormat;
-    htmlFormat.setForeground(QColor(qSmkApp()->option("color.html")));
+    htmlFormat.setForeground(QColor(qMorsApp()->option("color.html")));
     format_.append(htmlFormat);
     regexp_.append(QRegExp("<[0-z,~!@#$%^&*()-+|{}|:;\"'<,>.?/\t ]+>"));
 
     QTextCharFormat headerFormat;
-    headerFormat.setForeground(QColor(qSmkApp()->option("color.header")));
+    headerFormat.setForeground(QColor(qMorsApp()->option("color.header")));
     format_.append(headerFormat);
     regexp_.append(QRegExp("^#.*"));
 }
@@ -110,13 +110,13 @@ void MorsMarkHighlighter::highlightBlock(const QString& text)
         setCurrentBlockState(0);
 
     QTextCharFormat codeFormat;
-    codeFormat.setForeground(QColor(qSmkApp()->option("color.code")));
+    codeFormat.setForeground(QColor(qMorsApp()->option("color.code")));
     _aux_multiBlockMatch(text, "`", "`", codeFormat, 0x0001);
     // _aux_multiBlockMatch(text, "``", "``", codeFormat, 0x0002);
     // _aux_multiBlockMatch(text, "```", "```", codeFormat, 0x004);
 
     QTextCharFormat latexFormat;
-    latexFormat.setForeground(QColor(qSmkApp()->option("color.latex")));
+    latexFormat.setForeground(QColor(qMorsApp()->option("color.latex")));
     _aux_multiBlockMatch(text, "${", "}$",  latexFormat, 0x1000);
     _aux_multiBlockMatch(text, "$$", "$$", latexFormat, 0x2000);
 }

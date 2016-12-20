@@ -107,13 +107,13 @@ void MorsMarkWidget::setSelectedQuote(void) {
     QTextCursor cursor = this->textCursor();
     if(cursor.hasSelection()) {
         QString  selected = cursor.selectedText();
-        QStringList lines = selected.split(SMK_LINE_END);
+        QStringList lines = selected.split(MORS_LINE_END);
         if(lines.size() == 1) {
             setSelectedFormat("<q>", "</q>");
         } else {
             for(QStringList::iterator it=lines.begin(); it!=lines.end(); ++it)
                 it->prepend("> ");
-            cursor.insertText(lines.join(SMK_LINE_END));
+            cursor.insertText(lines.join(MORS_LINE_END));
         }
     } // if(cursor.hasSelection())
 }
@@ -141,7 +141,7 @@ void MorsMarkWidget::setSelectedSmaller(void) {
 void MorsMarkWidget::setSelectedOrderedList(void) {
     QTextCursor cursor = this->textCursor();
     QString   selected = cursor.selectedText();
-    QStringList  lines = selected.split(SMK_LINE_END);
+    QStringList  lines = selected.split(MORS_LINE_END);
     int list_num = 1;
     for(QStringList::iterator it=lines.begin(); it!=lines.end(); ++it) {
         if(! it->isEmpty()) {
@@ -149,16 +149,16 @@ void MorsMarkWidget::setSelectedOrderedList(void) {
             ++list_num;
         }
     }
-    cursor.insertText(lines.join(SMK_LINE_END));
+    cursor.insertText(lines.join(MORS_LINE_END));
 }
 
 void MorsMarkWidget::setSelectedUnorderedList(void) {
     QTextCursor cursor = this->textCursor();
     QString selected =  cursor.selectedText();
-    QStringList lines = selected.split(SMK_LINE_END);
+    QStringList lines = selected.split(MORS_LINE_END);
     for(QStringList::iterator it=lines.begin(); it!=lines.end(); ++it)
         if(! it->isEmpty()) it->prepend(" + ");
-    cursor.insertText(lines.join(SMK_LINE_END));
+    cursor.insertText(lines.join(MORS_LINE_END));
 }
 
 void MorsMarkWidget::setSelectedLeftAlign(void) {
@@ -241,7 +241,7 @@ void MorsMarkWidget::keyPressEvent(QKeyEvent* event)
         QTextCursor cursor = this->textCursor();
         if(cursor.hasSelection()) {
             QString  selected = cursor.selectedText();
-            QStringList lines = selected.split(SMK_LINE_END);
+            QStringList lines = selected.split(MORS_LINE_END);
             bool inverse_operation = (event->modifiers() & Qt::ControlModifier) ||
                                      (event->modifiers() & Qt::ShiftModifier);
             if( inverse_operation ) {
@@ -253,7 +253,7 @@ void MorsMarkWidget::keyPressEvent(QKeyEvent* event)
                 for(QStringList::iterator it=lines.begin(); it!=lines.end(); ++it)
                     if(! it->isEmpty()) it->prepend("    ");
             }
-            cursor.insertText(lines.join(SMK_LINE_END));
+            cursor.insertText(lines.join(MORS_LINE_END));
         } else { // if(cursor.hasSelection())
             // Just insert a '\t', but we replace '\t' as "    "
             cursor.insertText("    ");

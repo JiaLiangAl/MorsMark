@@ -6,9 +6,9 @@
 #include "MorsApp.h"
 
 /** ****************************************************************************
- * @brief qSmkRemoveFile
+ * @brief qMorsRemoveFile
  * @param in path 将要删除的文件的路径
- * @return 成功删除文件返回 SMK_EMPTY_STR, 否则返回错误信息
+ * @return 成功删除文件返回 MORS_EMPTY_STR, 否则返回错误信息
  * ****************************************************************************/
 inline QString qMorsRemoveFile(const QString& path) {
     QFile file(path);
@@ -22,7 +22,7 @@ inline QString qMorsRemoveFile(const QString& path) {
  * @brief qMorsLoadText
  * @param in path 将要读入的文件路径
  * @param out pContext 传出读入文件的内容，以 UTF8 编码
- * @return 成功删除文件返回 SMK_EMPTY_STR, 否则返回错误信息
+ * @return 成功删除文件返回 MORS_EMPTY_STR, 否则返回错误信息
  * ****************************************************************************/
 inline QString qMorsLoadText(const QString& path, QString* pContext) {
     QFile file(path);
